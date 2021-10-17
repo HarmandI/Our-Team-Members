@@ -1,18 +1,16 @@
-
 #corps {
   text-align: center;
-  font-family: Mulish, sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
-#h1{
-  font-family: Mulish, sans-serif;
-font-size: x-large;
-font-style: bold;
-font-weight: 800;
-line-height: 26px;
-letter-spacing: 0.3545454740524292px;
-text-align: center;
-
+#h1 {
+  font-family: "Mulish", sans-serif;
+  font-size: 144px;
+  font-style: bold;
+  font-weight: 1500;
+  line-height: 26px;
+  letter-spacing: 0.3545454740524292px;
+  text-align: center;
 }
 
 #blocs {
@@ -20,46 +18,52 @@ text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  
 }
 
 #personne1,
 #personne2,
 #personne3 {
-  width: 200px;
-  height: 200px;
-  background: #edecfe;
+  background-color: #3d36c2;
+  width: 160px;
+  height: 175px;
+  margin: 50px 5px 5px 40px;
+  /* background: #edecfe; */
   border-radius: 10px;
   padding: 20px;
-  font-family: Mulish, sans-serif;
+  font-family: "Mulish", sans-serif;
   font-size: small;
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 800;
   line-height: 5%;
   letter-spacing: 0.3545454740524292px;
   text-align: left;
   display: table-cell;
   vertical-align: bottom;
-  z-index: 0;
-  position: relative;
-
 }
 
-#nom,#prenom{
+#nom {
+  font-weight: bold;
+  font-size: 30px;
+}
+#prenom {
   font-size: medium;
 }
 
 #avatar {
-  display: flex;
-  text-align: left;
-  width: 100px;
-  height: 100px;
-  border: 50%;
-  margin-bottom: 100px; 
-  padding-top: 50px;
-  z-index: 1;
-  position: absolute;
+  position: relative;
+  /* display: flex; */
+  left: -25%;
   border-radius: 50%;
+  margin-bottom: -20%;
+  margin-right: -10%;
+  width: 150px;
+
+  /* text-align: left; */
+  /* height: 150px; */
+  /* border: 50%;*/
+  /* padding-top: 50px; */
+  /* /* z-index: 1; */
+  /* position: absolute;  */
 }
 
 /*footer*/
@@ -69,7 +73,7 @@ nav {
   justify-content: center;
   border-top: 1px solid #eee;
   margin-top: 1em;
-  padding-top: .5em;
+  padding-top: 0.5em;
 }
 
 .pagination {
@@ -85,9 +89,9 @@ nav {
 
 .pagination a {
   display: block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   border: 1px solid #999;
-  border-radius: .2em;
+  border-radius: 0.2em;
   text-decoration: none;
 }
 
@@ -95,6 +99,3 @@ nav {
   background-color: #333;
   color: #fff;
 }
-
-
-  
