@@ -1,11 +1,10 @@
-const AVATAR = document.getElementById("avatar");
-const NOM = document.getElementById("nom");
-const PRENOM = document.getElementById("prenom");
-const IDENTIFIANT = document.getElementById("identifiant");
-const MAIL = document.getElementById("mail");
 
-const PERSONNE = document.getElementById("personne_suivante");
+
+const PERSONNE = document.getElementById("blocs");
 const API_URL = "https://reqres.in/api/users?";
+
+const API_URL_PAGE = "https://reqres.in/api/users?page=2";
+const BUTTONS = document.getElementById("page");
 
 class Identite {
   constructor(avatar, nom, prenom, identifiant, mail) {
@@ -17,22 +16,25 @@ class Identite {
   }
 
   PersonneSuiv() {
-    PERSONNE.innerHTML += `
-        <div>
-            <img
-              id="avatar"
-              src="${this.avatar}"
-              alt=""
-            />
-          </div>
-          <div id="personne1">
-            <p id="nom" >${this.nom}</p>  
-            <p id="prenom">${this.prenom} </p>
+    PERSONNE.innerHTML += ` 
+            
+          <div id="personne">
+            <img id="avatar" src="${this.avatar}" alt=""/>
+            <div id="NP">
+            <p id="nom" >${this.nom} ${this.prenom}</p>  
+            
             <p id="identifiant"> ${this.identifiant}</p>
             <p id="mail">${this.mail}</p>
+            </div>
           </div>`;
   }
 }
+
+BUTTONS.addEventListener('click',() => {
+  console.log(BUTTONS.value);
+  const NUMERO_PAGE = BUTTONS.value;
+  getData(API_URL_PAGE+NUMERO_PAGE);
+});
 
 const getData = (api) => {
   fetch(api)
@@ -42,17 +44,17 @@ const getData = (api) => {
     .then((dataUser) => {
       console.log(dataUser);
 
+      PERSONNE.innerHTML = '';
       const PERPAGE = dataUser.per_page;
 
-      for (i = 0; i < PERPAGE; i++) {
-        AVATAR.src = dataUser.data[i].avatar;
-        NOM.innerText = dataUser.data[i].last_name;
-        PRENOM.innerText = dataUser.data[i].first_name;
-        IDENTIFIANT.innerText = dataUser.data[i].id;
-        MAIL.innerText = dataUser.data[i].email;
-        // PERSONNE.innerHTML='';
+      for (let i = 0; i < PERPAGE; i++) {
+        const urlAvatar = dataUser.data[i].avatar;
+        const urlNOM=dataUser.data[i].last_name;
+        const urlPRENOM=dataUser.data[i].first_name;
+        const urlIDENTIFIANT=dataUser.data[i].id;
+        const urlMAIL = dataUser.data[i].email;
 
-        const gens = new Identite(AVATAR, NOM, PRENOM, IDENTIFIANT, MAIL);
+        const gens = new Identite(urlAvatar, urlNOM, urlPRENOM, urlIDENTIFIANT, urlMAIL);
         gens.PersonneSuiv();
       }
     });

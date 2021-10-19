@@ -1,4 +1,5 @@
 #corps {
+  justify-content: space-between;
   text-align: center;
   font-family: "Mulish", sans-serif;
 }
@@ -16,18 +17,19 @@
 #blocs {
   display: flex;
   flex-direction: row;
+  margin: auto;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  width: 80%;
 }
 
-#personne1,
-#personne2,
-#personne3 {
-  background-color: #3d36c2;
+
+#personne {
+  justify-content: space-between;
   width: 160px;
   height: 175px;
   margin: 50px 5px 5px 40px;
-  /* background: #edecfe; */
+  background: #edecfe;
   border-radius: 10px;
   padding: 20px;
   font-family: "Mulish", sans-serif;
@@ -36,22 +38,27 @@
   font-weight: 800;
   line-height: 5%;
   letter-spacing: 0.3545454740524292px;
-  text-align: left;
+  text-align: center;
   display: table-cell;
   vertical-align: bottom;
+
 }
+
+
+
+
 
 #nom {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 15px;
 }
 #prenom {
   font-size: medium;
-}
+} 
 
 #avatar {
   position: relative;
-  /* display: flex; */
+  top : -40%;
   left: -25%;
   border-radius: 50%;
   margin-bottom: -20%;
@@ -76,26 +83,4 @@ nav {
   padding-top: 0.5em;
 }
 
-.pagination {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
 
-.pagination li {
-  margin: 0 1px;
-}
-
-.pagination a {
-  display: block;
-  padding: 0.5em 1em;
-  border: 1px solid #999;
-  border-radius: 0.2em;
-  text-decoration: none;
-}
-
-.pagination a[aria-current="page"] {
-  background-color: #333;
-  color: #fff;
-}
